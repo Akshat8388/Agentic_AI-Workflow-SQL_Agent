@@ -1212,6 +1212,18 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
+   .app-layout {
+    height: 100dvh;
+  }
+
+  .chat-container {
+    height: 100dvh;
+  }
+
+  .side-bar {
+    height: 100dvh;
+  }
+}
   .side-bar {
     position: fixed;
     left: 0;
