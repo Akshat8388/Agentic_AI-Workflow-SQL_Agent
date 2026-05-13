@@ -1112,7 +1112,7 @@ body.light-mode .auth-input {
   background: none;
   border: none;
   cursor: pointer;
-  color: #00bfa5;
+  color: #888;
   display: flex;
   align-items: center;
   justify-content: center;
