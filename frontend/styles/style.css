@@ -1095,6 +1095,46 @@ body.light-mode .auth-input {
   border-color: #00bfa5;
 }
 
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper .auth-input {
+  padding-right: 44px;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00bfa5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  min-width: 36px;
+  min-height: 36px;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.eye-btn:hover {
+  color: #00bfa5;
+}
+
+body.light-mode .eye-btn {
+  color: #888;
+}
+
+body.light-mode .eye-btn:hover {
+  color: #00bfa5;
+}
+
 .auth-btn {
   width: 100%;
   padding: 12px;
@@ -1204,6 +1244,7 @@ body.light-mode .sidebar-user {
 
 /* Hide the mobile hamburger on desktop */
 @media (min-width: 769px) {
+  
   .mobile-menu-btn {
     display: none;
   }
@@ -1212,18 +1253,23 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
-   .app-layout {
-    height: 100dvh;
+  /* Auth box responsive fix */
+  .auth-box {
+    width: 92%;
+    padding: 28px 20px;
   }
 
-  .chat-container {
-    height: 100dvh;
+  .eye-btn {
+    right: 10px;
+    width: 32px;
+    height: 32px;
   }
 
+  .app-layout,
+  .chat-container,
   .side-bar {
     height: 100dvh;
   }
-}
   .side-bar {
     position: fixed;
     left: 0;
