@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+*.pyo
+.env
+*.db
+database/
+backend/user_data/
+backend/plots/
+.git
