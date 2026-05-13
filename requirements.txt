@@ -20,10 +20,10 @@ langchain-openai==0.3.35
 #langchain-huggingface==0.3.1
 #langchain-ollama==0.3.10
 #langchain-nvidia-ai-endpoints==0.3.19
-langgraph==0.6.10
-langgraph-checkpoint==4.0.1
+langgraph
+langgraph-checkpoint
 langgraph-checkpoint-sqlite==3.0.3
-langgraph-prebuilt==0.6.5
+langgraph-prebuilt
 
 # LLM tools
 tavily-python
