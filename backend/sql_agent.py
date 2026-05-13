@@ -3,7 +3,7 @@ from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langgraph.prebuilt import create_react_agent
 from langchain_experimental.tools import PythonREPLTool
 from langgraph.graph import StateGraph, START, END, add_messages
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+#from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 #from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate,ChatPromptTemplate,MessagesPlaceholder
 from langchain_core.output_parsers import PydanticOutputParser
