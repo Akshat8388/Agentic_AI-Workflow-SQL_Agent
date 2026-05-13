@@ -1253,18 +1253,6 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
-  /* Auth box responsive fix */
-  .auth-box {
-    width: 92%;
-    padding: 28px 20px;
-  }
-
-  .eye-btn {
-    right: 10px;
-    width: 32px;
-    height: 32px;
-  }
-
   .app-layout,
   .chat-container,
   .side-bar {
