@@ -103,7 +103,7 @@ It integrates **LangChain**, **LangGraph**, **GPT-4.1**, **FastAPI**, and deploy
 
 The diagram below shows how SQL Agent routes user queries between nodes:
 
-<img src="Langgraph/SQL_Agent/agent_workflow.png" alt="LangGraph Workflow" width="700" />
+<img src="agent_workflow.png" alt="langgraph workflow" width="700" />
 
 ---
 
