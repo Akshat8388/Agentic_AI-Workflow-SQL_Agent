@@ -3,14 +3,14 @@ from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langgraph.prebuilt import create_react_agent
 from langchain_experimental.tools import PythonREPLTool
 from langgraph.graph import StateGraph, START, END, add_messages
-#from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 #from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate,ChatPromptTemplate,MessagesPlaceholder
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 from typing import TypedDict,Annotated,List,Optional,Literal
 from langchain_core.messages import BaseMessage,HumanMessage,AIMessage
-#from langchain_ollama import ChatOllama
+from langchain_ollama import ChatOllama
 from langchain_openai import ChatOpenAI
 #from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_community.tools import TavilySearchResults
@@ -37,10 +37,14 @@ if not github_token:
 
 #************************** Kaggle Ollama API KEY *******************************
 #TUNNEL_URL = "https://saturninely-shiftier-lyda.ngrok-free.dev/"
-#google_model =  ChatOllama(model="gemma4:26b",base_url=TUNNEL_URL,temperature=0)
-
+google_model = ChatOllama(
+    model="gemma3:4b",
+    base_url="https://ollama.com",
+    client_kwargs={"headers": {"Authorization": "Bearer " + os.environ.get("OLLAMA_API_KEY")}},
+    temperature=0
+)
 #**************************** Github API KEY *****************************
-google_model = ChatOpenAI(model="openai/gpt-4.1",api_key=github_token,base_url="https://models.github.ai/inference",temperature=0)
+#google_model = ChatOpenAI(model="openai/gpt-4.1",api_key=github_token,base_url="https://models.github.ai/inference",temperature=0)
 
 #***************************** NVIDIA API KEY *******************************
 #google_model = ChatNVIDIA(model = "google/gemma-4-31b-it",temperature=0)
