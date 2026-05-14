@@ -3,7 +3,7 @@ from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langgraph.prebuilt import create_react_agent
 from langchain_experimental.tools import PythonREPLTool
 from langgraph.graph import StateGraph, START, END, add_messages
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+#from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 #from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate,ChatPromptTemplate,MessagesPlaceholder
 from langchain_core.output_parsers import PydanticOutputParser
@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 from typing import TypedDict,Annotated,List,Optional,Literal
 from langchain_core.messages import BaseMessage,HumanMessage,AIMessage
 from langchain_ollama import ChatOllama
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
 #from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_community.tools import TavilySearchResults
 from dotenv import load_dotenv
