@@ -145,7 +145,7 @@ https://github.com/user-attachments/assets/b8396347-db57-4913-bce6-bea23bfe929c
  
 ```bash
 git clone https://github.com/Akshat8388/Agentic_AI-Workflow-SQL_Agent.git
-cd Agentic_AI-Workflow-SQL_Agent/Langgraph/SQL_Agent
+cd Agentic_AI-Workflow-SQL_Agent
 ```
  
 ### 2. Install dependencies
