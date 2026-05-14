@@ -21,10 +21,6 @@ import os
 import uuid
 
 load_dotenv()
-github_token = os.environ.get("AI_MODELS_TOKEN")
-if not github_token:
-    raise RuntimeError("AI_MODELS_TOKEN is not set. Check your .env file.")
-
 #********************** HuggingFACE Endpoint *****************************
 #huggingFace_llm = HuggingFaceEndpoint(repo_id="openai/gpt-oss-20b",temperature=0,streaming=True)
 #model = ChatHuggingFace(llm=huggingFace_llm)
