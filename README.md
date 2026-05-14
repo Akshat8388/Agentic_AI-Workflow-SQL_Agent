@@ -8,12 +8,12 @@ Built with **LangChain**, **LangGraph**, **Gemma4:26b (Ollama Cloud Model)**, **
 🔗 **Live Demo:** [agentic-ai-workflow-sql-agent.onrender.com](https://agentic-ai-workflow-sql-agent.onrender.com)
 
 > 🔐 **Try it live using any Login credentials** — use any of these test accounts:
-> 
-> | Username | Password |
-> |---|---|
-> | akshat | akshat123 |
-> | storm | storm123 |
-> | akshatxstorm | storm@123 |
+
+| Username | Password |
+|---|---|
+| akshat | akshat123 |
+| storm | storm123 |
+| akshatxstorm | storm@123 |
 
  ---
 ## 🧠 How It Works — The Agent Graph
