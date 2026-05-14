@@ -3,7 +3,7 @@
 ## 💡 Overview
 **SQL Agent** is a **full-stack, production-ready agentic AI application** that lets you query any database in plain English. It writes and executes SQL autonomously, visualizes results as charts, and protects your data with a **human-in-the-loop approval gate** — all orchestrated by a **LangGraph multi-agent graph**.
 
-Built with **LangChain**, **LangGraph**, **GPT-4.1 (GitHub Models)**, **FastAPI**, and deployed on **Render** via **Docker**.
+Built with **LangChain**, **LangGraph**, **Gemma4:26b (Ollama Cloud Model)**, **FastAPI**, and deployed on **Render** via **Docker**.
 
 🔗 **Live Demo:** [agentic-ai-workflow-sql-agent.onrender.com](https://agentic-ai-workflow-sql-agent.onrender.com)
 
@@ -119,7 +119,7 @@ The agent is context-aware — it knows it's part of a multi-agent SQL system.
 |---|---|
 | **Agent Framework** | LangGraph + LangChain |
 | **Monitoring Framework** | LangSmith |
-| **LLM** | GPT-4.1 via GitHub Models API |
+| **LLM** | Gemma4:26b via ollama Cloud Models API |
 | **Agent Pattern** | ReAct (via `create_react_agent`) |
 | **Output Parsing** | Pydantic Output Parsers |
 | **Backend** | FastAPI + Uvicorn |
@@ -161,7 +161,7 @@ pip install -r requirements.txt
 ### 3. Create a `.env` file
  
 ```env
-AI_MODELS_TOKEN=your_github_models_token
+OLLAMA_API_KEY=your_ollama_api_key
 SECRET_KEY=your_jwt_secret_key
 TAVILY_API_KEY=your_tavily_api_key
 LANGCHAIN_API_KEY=your_langchain_api_key
@@ -188,7 +188,7 @@ docker build -t sql-agent .
  
 # Run
 docker run -p 8000:8000 \
-  -e AI_MODELS_TOKEN=your_token \
+  -e OLLAMA_API_KEY=your_token \
   -e SECRET_KEY=your_secret \
   -e TAVILY_API_KEY=your_key \
   -e LANGCHAIN_API_KEY=your_key \
