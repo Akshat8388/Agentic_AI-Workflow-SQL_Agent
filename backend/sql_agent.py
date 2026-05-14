@@ -34,7 +34,7 @@ load_dotenv()
 #************************** Kaggle Ollama API KEY *******************************
 #TUNNEL_URL = "https://saturninely-shiftier-lyda.ngrok-free.dev/"
 google_model = ChatOllama(
-    model="gemma3:4b",
+    model="gemma4:26b",
     base_url="https://ollama.com",
     client_kwargs={"headers": {"Authorization": "Bearer " + os.environ.get("OLLAMA_API_KEY")}},
     temperature=0
