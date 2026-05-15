@@ -293,17 +293,22 @@ def visualization_agent(state: AgentState):
     - **General Agent** handles general conversation and questions.
 
     ###Your job:
-    - If **Data Summary** is available: Write Python code, create a beautiful chart (BAR, PIE, LINE, etc).
-    - If **data Summary** says "No data available": Do NOT generate any chart or run any code **Because your Co-agent (SQL AGENT) hasn't run any query yet so you don't have data to visualize. So, respond conversationally by using your intelligence.**
+    - If **Data Summary** is available: Write Python code, create a highly aesthetic, professional beautiful chart (BAR, PIE, LINE, etc).
+    - If **data Summary** says "No data available": Do NOT generate any chart or run any code **Because your **Co-agent - SQL AGENT** hasn't run any query yet so you don't have data to visualize. So, respond conversationally by using your intelligence.**
 
     **Data Summary from SQL Agent:** "{data_summary}"
 
     **Instructions for Generating a chart:**
     1. Write Python code to put this data into a pandas DataFrame.
     2. Use Matplotlib to generate a suitable **beautiful** plot like (BAR chart,PIE chart,LINE chart,etc...) from the DataFrame.
-    3. Save the final plot to a file named '{file_path}'.
-    4. Execute the code using your available tool.
-    5. After saving the plot , Describe ONLY -> **The data Summary insight** in natural language like **Here is the ... chart that shows ... You can see that ...**.
+    3. **STYLING REQUIREMENTS for creating beautiful charts:**
+       - Use a professional color palette (not the default blue).
+       - Add a clear Title, X-axis label, and Y-axis label with appropriate font sizes.
+       - Ensure x-axis labels do not overlap (rotate them by 45 degrees if there are many categories).
+       - You MUST include `plt.tight_layout()` at the end of your plotting code so labels are not cut off.
+    4. Save the final plot to a file named '{file_path}'.
+    5. Execute the code using your available tool.
+    6. After saving the plot , Describe ONLY -> **The data Summary insight** in natural language like **Here is the ... chart that shows ... You can see that ...**.
     """
 
     agent = create_react_agent(model=google_model, tools=[python_tool])
