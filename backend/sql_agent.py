@@ -294,7 +294,7 @@ def visualization_agent(state: AgentState):
 
     ###Your job:
     - If **Data Summary** is available: Write Python code, create a highly aesthetic, professional beautiful chart (BAR, PIE, LINE, etc).
-    - If **data Summary** says "No data available": Do NOT generate any chart or run any code **Because your **Co-agent - SQL AGENT** hasn't run any query yet so you don't have data to visualize. So, respond conversationally by using your intelligence.**
+    - If **data Summary** says "No data available": Do NOT generate any chart or run any code Because your **Co-agent - SQL AGENT** hasn't run any query yet so you don't have data to visualize. So, respond conversationally by using your intelligence -> SQL_AGENT hasn't provided the data yet. Once a query has been run and a data summary is provided, I’ll be happy to create a chart for you!.**
 
     **Data Summary from SQL Agent:** "{data_summary}"
 
