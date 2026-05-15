@@ -135,7 +135,7 @@ The agent is context-aware — it knows it's part of a multi-agent SQL system.
 ---
 
 ## 🚀 Demo
-https://github.com/user-attachments/assets/b8396347-db57-4913-bce6-bea23bfe929c
+https://github.com/user-attachments/assets/de25d2fb-8353-4119-ba06-1ed6fb204205
 
 ---
 
