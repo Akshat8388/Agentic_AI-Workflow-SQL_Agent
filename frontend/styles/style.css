@@ -459,7 +459,7 @@ body.light-mode .tooltip-divider {
 
 .message {
   padding: 10px 15px;
-  max-width: 95%;           /* ✅ constrain bubble width */
+  max-width: 85%;           /* ✅ constrain bubble width */
   line-height: 1.6;
   font-size: 15px;
   animation: fadeIn 0.3s ease;
@@ -624,7 +624,23 @@ body.light-mode .message.ai blockquote {
   color: #666;
 }
 
-/* Tables */
+/* Sync markdown elements with the global theme toggle transition */
+.message.ai h1,
+.message.ai h2,
+.message.ai h3,
+.message.ai p,
+.message.ai strong,
+.message.ai em,
+.message.ai blockquote,
+.message.ai pre,
+.message.ai pre code,
+.message.ai code,
+.message.ai table,
+.message.ai th,
+.message.ai td {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 /* Tables */
 .message.ai table {
   display: block;                   /* Allows the table to respect overflow rules */
@@ -1258,6 +1274,10 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .message {
+    max-width:100%;
+  }
+  
   .side-bar {
     position: fixed;
     left: 0;
