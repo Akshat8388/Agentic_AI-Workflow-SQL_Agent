@@ -456,7 +456,7 @@ body.light-mode .tooltip-divider {
 
 .message {
   padding: 10px 15px;
-  max-width: 85%;           /* ✅ constrain bubble width */
+  max-width: 80%;           /* ✅ constrain bubble width */
   line-height: 1.6;
   font-size: 15px;
   animation: fadeIn 0.3s ease;
@@ -487,6 +487,8 @@ body.light-mode .message.user {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  max-width: 92%;
+  min-width: 0;
 }
 
 body.light-mode .message.ai {
@@ -622,19 +624,18 @@ body.light-mode .message.ai blockquote {
 }
 
 /* Tables */
-/* Tables */
-.message.ai .table-wrapper {
-  width: 100%;
+.table-wrapper {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
   margin: 10px 0;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .message.ai table {
-  width: max-content;       /* ← key: table sizes to its content, not bubble */
-  min-width: 100%;
+  width: 100%;
+  min-width: max-content;
   border-collapse: collapse;
+  margin: 0;
   font-size: 14px;
 }
 
@@ -643,7 +644,6 @@ body.light-mode .message.ai blockquote {
   padding: 8px 12px;
   border: 1px solid #444;
   text-align: left;
-  white-space: nowrap;      /* ← prevents cell text wrapping awkwardly */
 }
 
 body.light-mode .message.ai th,
@@ -1105,46 +1105,6 @@ body.light-mode .auth-input {
   border-color: #00bfa5;
 }
 
-.password-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.password-wrapper .auth-input {
-  padding-right: 44px;
-}
-
-.eye-btn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #00bfa5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  min-width: 36px;
-  min-height: 36px;
-  transition: color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.eye-btn:hover {
-  color: #00bfa5;
-}
-
-body.light-mode .eye-btn {
-  color: #888;
-}
-
-body.light-mode .eye-btn:hover {
-  color: #00bfa5;
-}
-
 .auth-btn {
   width: 100%;
   padding: 12px;
@@ -1254,7 +1214,6 @@ body.light-mode .sidebar-user {
 
 /* Hide the mobile hamburger on desktop */
 @media (min-width: 769px) {
-  
   .mobile-menu-btn {
     display: none;
   }
@@ -1263,11 +1222,6 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .app-layout,
-  .chat-container,
-  .side-bar {
-    height: 100dvh;
-  }
   .side-bar {
     position: fixed;
     left: 0;
@@ -1343,10 +1297,6 @@ body.light-mode .sidebar-user {
     width: 92%;
     padding: 22px 18px;
   }
-  .message.ai {
-  max-width: 95%;           /* give AI bubbles more width on mobile */
-  overflow: hidden;         /* prevent bubble itself from overflowing */
-}
 }
 
 /* Small mobile */
