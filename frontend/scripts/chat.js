@@ -209,14 +209,14 @@ function appendMessage(text, sender) {
   msg.classList.add("message", sender);
   msg.innerHTML = sender === "ai" ? marked.parse(text) : text;
 
-  if (sender === "ai") {
-    msg.querySelectorAll("table").forEach(table => {
-      const wrapper = document.createElement("div");
-      wrapper.classList.add("table-wrapper");
-      table.parentNode.insertBefore(wrapper, table);
-      wrapper.appendChild(table);
-    });
-  }
+  // if (sender === "ai") {
+  //   msg.querySelectorAll("table").forEach(table => {
+  //     const wrapper = document.createElement("div");
+  //     wrapper.classList.add("table-wrapper");
+  //     table.parentNode.insertBefore(wrapper, table);
+  //     wrapper.appendChild(table);
+  //   });
+  // }
 
   messages.appendChild(msg);
   messages.scrollTop = messages.scrollHeight;
