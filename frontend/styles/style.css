@@ -139,6 +139,7 @@ body.light-mode {
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+  /* ✅ match the global transition timing */
   transition: background 0.3s ease, color 0.3s ease;
   color: #ccc;
   font-size: 14px;
@@ -150,7 +151,7 @@ body.light-mode {
   color: #fff;
 }
 
-/* Active chat item */
+/* Active chat item — use a CSS class instead of inline style */
 .chat-item.active {
   background: #2b2c2d;
   color: #fff;
@@ -159,6 +160,7 @@ body.light-mode {
 /* Light mode */
 body.light-mode .chat-item {
   color: #444;
+  /* ✅ removed hardcoded background — inherit from sidebar */
 }
 
 body.light-mode .chat-item:hover {
@@ -240,12 +242,13 @@ body.light-mode .side-bar .toggle-btn{
 }
 
 body.light-mode .side-bar .toggle-btn svg {
-  fill: #1a1a1a;
+  fill: #1a1a1a; /* Darken the icon for visibility */
 }
 
+/* Optional: Keep or change the hover effect for light mode */
 body.light-mode .side-bar .toggle-btn:hover {
   background-color: #ddd;
-  fill: #fff;
+  fill: #fff; /* Switch back to white icon on hover */
 }
 
 @keyframes shimmer {
@@ -290,7 +293,7 @@ body.light-mode .intro h1 {
 .header .buttons .db_btn {
 display: flex;
 align-items: center;
-gap: 8px;
+gap: 8px; /* space between indicator and text */
 padding: 10px 15px;
 font-size: 14px;
 border-radius: 9px;
@@ -329,7 +332,7 @@ body.light-mode .header .buttons .db_btn:hover {
 width: 7px;
 height: 7px;
 border-radius: 50%;
-background-color: red;
+background-color: red; /* default: disconnected */
 transition: background-color 0.3s ease;
 }
 
@@ -439,6 +442,7 @@ body.light-mode .tooltip-divider {
 }
 
 /* Messages Area */
+/* Messages Area */
 .messages {
   flex: 1;
   overflow-y: auto;
@@ -452,7 +456,7 @@ body.light-mode .tooltip-divider {
 
 .message {
   padding: 10px 15px;
-  max-width: 80%;
+  max-width: 85%;           /* ✅ constrain bubble width */
   line-height: 1.6;
   font-size: 15px;
   animation: fadeIn 0.3s ease;
@@ -483,9 +487,6 @@ body.light-mode .message.user {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  /* ✅ FIX: allows inner content like tables to scroll horizontally */
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 body.light-mode .message.ai {
@@ -620,12 +621,20 @@ body.light-mode .message.ai blockquote {
   color: #666;
 }
 
-/* ✅ Tables — horizontal scroll fix */
+/* Tables */
+/* Tables */
+.message.ai .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
 .message.ai table {
-  width: max-content;
+  width: max-content;       /* ← key: table sizes to its content, not bubble */
   min-width: 100%;
   border-collapse: collapse;
-  margin: 10px 0;
   font-size: 14px;
 }
 
@@ -634,7 +643,7 @@ body.light-mode .message.ai blockquote {
   padding: 8px 12px;
   border: 1px solid #444;
   text-align: left;
-  white-space: nowrap;
+  white-space: nowrap;      /* ← prevents cell text wrapping awkwardly */
 }
 
 body.light-mode .message.ai th,
@@ -772,7 +781,7 @@ body.light-mode .content-btn svg {
 
 /* Modal Overlay */
 .modal {
-display: none;
+display: none; /* hidden by default */
 position: fixed;
 z-index: 3000;
 left: 0;
@@ -1171,6 +1180,7 @@ body.light-mode .eye-btn:hover {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* margin-bottom: 4px; */
 }
 
 .sidebar-user {
@@ -1299,14 +1309,7 @@ body.light-mode .sidebar-user {
 
   .message {
     font-size: 14px;
-    max-width: 95%;
-  }
-
-  /* ✅ AI bubble wider + scrollable on mobile */
-  .message.ai {
-    max-width: 95%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    max-width: 90%;
   }
 
   .intro {
@@ -1340,6 +1343,10 @@ body.light-mode .sidebar-user {
     width: 92%;
     padding: 22px 18px;
   }
+  .message.ai {
+  max-width: 95%;           /* give AI bubbles more width on mobile */
+  overflow: hidden;         /* prevent bubble itself from overflowing */
+}
 }
 
 /* Small mobile */
