@@ -456,7 +456,7 @@ body.light-mode .tooltip-divider {
 
 .message {
   padding: 10px 15px;
-  max-width: 85%;           /* ✅ constrain bubble width */
+  max-width: 95%;           /* ✅ constrain bubble width */
   line-height: 1.6;
   font-size: 15px;
   animation: fadeIn 0.3s ease;
@@ -1250,6 +1250,9 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .app-layout {
+    height: 100dvh;
+  }
   .side-bar {
     position: fixed;
     left: 0;
