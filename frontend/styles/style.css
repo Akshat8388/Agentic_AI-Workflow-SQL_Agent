@@ -629,7 +629,7 @@ body.light-mode .message.ai blockquote {
   margin: 10px 0;
   border-radius: 6px;
   overflow-x: auto;  /* ADD THIS */
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .message.ai table {
