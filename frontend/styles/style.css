@@ -625,14 +625,11 @@ body.light-mode .message.ai blockquote {
 
 /* Tables */
 .table-wrapper {
-  overflow-x: auto;
-  max-width: 100%;
   margin: 10px 0;
   border-radius: 6px;
 }
 
 .message.ai table {
-  width: 100%;
   min-width: max-content;
   border-collapse: collapse;
   margin: 0;
