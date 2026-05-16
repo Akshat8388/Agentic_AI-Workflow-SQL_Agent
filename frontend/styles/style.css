@@ -456,7 +456,7 @@ body.light-mode .tooltip-divider {
 
 .message {
   padding: 10px 15px;
-  max-width: 80%;           /* ✅ constrain bubble width */
+  max-width: 85%;           /* ✅ constrain bubble width */
   line-height: 1.6;
   font-size: 15px;
   animation: fadeIn 0.3s ease;
@@ -487,10 +487,6 @@ body.light-mode .message.user {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  max-width: 92%;
-  min-width: 0;
-  overflow: visible;  /* ADD THIS */
-  height: auto;
 }
 
 body.light-mode .message.ai {
@@ -626,19 +622,11 @@ body.light-mode .message.ai blockquote {
 }
 
 /* Tables */
-.table-wrapper {
-  margin: 10px 0;
-  border-radius: 6px;
-  overflow-x: auto;
-  width: 100%;
-  display: block;
-}
-
 .message.ai table {
-  min-width: max-content;
+  width: 100%;
   border-collapse: collapse;
+  margin: 10px 0;
   font-size: 14px;
-  width: 100%;  /* Change from min-width to width */
 }
 
 .message.ai th,
@@ -671,28 +659,6 @@ body.light-mode .message.ai th {
 body.light-mode .message.ai tr:nth-child(even) {
   background: #fafafa;
 }
-
-/* --- Fix for Table Overflow in Chat Messages --- */
-#messages table {
-  display: block;           /* Forces the table to behave like a block element */
-  max-width: 100%;          /* Prevents it from growing wider than the chat bubble */
-  overflow-x: auto;         /* Adds a horizontal scrollbar ONLY if the table is too wide */
-  white-space: nowrap;      /* Prevents columns from squishing text too tightly */
-  border-collapse: collapse;
-  -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on mobile */
-}
-
-/* Optional: Add some basic borders and padding if your tables look bare */
-#messages th, 
-#messages td {
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border for your dark theme */
-  padding: 8px 12px;
-}
-
-#messages th {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
