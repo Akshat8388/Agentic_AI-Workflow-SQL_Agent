@@ -489,6 +489,7 @@ body.light-mode .message.user {
   border-bottom-left-radius: 15px;
   max-width: 92%;
   min-width: 0;
+  overflow: hidden;  /* ADD THIS */
 }
 
 body.light-mode .message.ai {
@@ -627,6 +628,8 @@ body.light-mode .message.ai blockquote {
 .table-wrapper {
   margin: 10px 0;
   border-radius: 6px;
+  overflow-x: auto;  /* ADD THIS */
+  max-width: 100%;
 }
 
 .message.ai table {
