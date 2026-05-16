@@ -1274,11 +1274,9 @@ body.light-mode .sidebar-user {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .message {
+  .message.ai{
     width:100%;
-    max-width:100%;
   }
-  
   .side-bar {
     position: fixed;
     left: 0;
