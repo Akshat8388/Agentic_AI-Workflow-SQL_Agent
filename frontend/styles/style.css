@@ -625,8 +625,12 @@ body.light-mode .message.ai blockquote {
 }
 
 /* Tables */
+/* Tables */
 .message.ai table {
-  width: 100%;
+  display: block;                   /* Allows the table to respect overflow rules */
+  width: 100%;                      /* Ensures it takes up the full width of the bubble */
+  overflow-x: auto;                 /* Triggers horizontal scroll when contents overflow */
+  -webkit-overflow-scrolling: touch;/* Makes scrolling buttery smooth on iOS devices */
   border-collapse: collapse;
   margin: 10px 0;
   font-size: 14px;
@@ -637,6 +641,7 @@ body.light-mode .message.ai blockquote {
   padding: 8px 12px;
   border: 1px solid #444;
   text-align: left;
+  min-width: 100px;                 /* Prevents text from squishing into tiny vertical lines on mobile */
 }
 
 body.light-mode .message.ai th,
