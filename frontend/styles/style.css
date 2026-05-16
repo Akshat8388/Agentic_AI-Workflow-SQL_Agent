@@ -1275,6 +1275,7 @@ body.light-mode .sidebar-user {
 /* Mobile */
 @media (max-width: 768px) {
   .message {
+    width:100%;
     max-width:100%;
   }
   
