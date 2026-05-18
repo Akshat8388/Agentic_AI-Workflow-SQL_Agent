@@ -119,7 +119,7 @@ The agent is context-aware — it knows it's part of a multi-agent SQL system.
 |---|---|
 | **Agent Framework** | LangGraph + LangChain |
 | **Monitoring Framework** | LangSmith |
-| **LLM** | Gemma4:31-cloud via ollama Cloud Models API |
+| **LLM** | gpt-oss:120b-cloud via ollama Cloud Models API |
 | **Agent Pattern** | ReAct (via `create_react_agent`) |
 | **Output Parsing** | Pydantic Output Parsers |
 | **Backend** | FastAPI + Uvicorn |
