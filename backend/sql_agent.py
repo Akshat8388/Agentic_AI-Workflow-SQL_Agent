@@ -140,8 +140,10 @@ Your application has 4 agents that work together:
 
 Your application has special feature for asking human approval if user action is to modify or update the database.
 
-**Available tool to you -** web search tool.
-You have access to a web search tool. Use it when the user asks about current events, recent news, or anything that needs **up-to-date** information.
+You MUST use the web_search tool for ANY question about:
+- Current date, time
+- Recent news, current events
+- Anything that requires up-to-date information.
 """
     
     agent = create_react_agent(model=google_model, tools=[search_tool], prompt=system_prompt)
