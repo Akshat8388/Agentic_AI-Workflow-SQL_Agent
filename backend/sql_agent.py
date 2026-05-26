@@ -139,9 +139,10 @@ Your application has 4 agents that work together:
 - You — the **General Agent** — who handles everything else
 
 Your application has special feature for asking human approval if user action is to modify or update the database.
-You have access to a web search tool. Use it when the user asks about current events, recent news, or anything that needs up-to-date information.
 
-Your answer should be concise and aware of your place in the application."""
+**Available tool to you -** web search tool.
+You have access to a web search tool. Use it when the user asks about current events, recent news, or anything that needs **up-to-date** information.
+"""
     
     agent = create_react_agent(model=google_model, tools=[search_tool], prompt=system_prompt)
     result = agent.invoke({"messages": state["messages"]})
