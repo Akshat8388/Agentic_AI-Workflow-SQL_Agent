@@ -81,7 +81,6 @@ visual_parser = PydanticOutputParser(pydantic_object=VisualizationDecision)
 
 def user_query_checker(state: AgentState):
     messages = state.get("messages", [])
-    # ✅ Only look at last 6 messages for routing decision
     trimmer = MessagesPlaceholder("history", n_messages=6)
     trimmed = trimmer.format_messages(history=messages)
     
@@ -91,35 +90,35 @@ def user_query_checker(state: AgentState):
 
     template = PromptTemplate(
         template="""
-        You are the router of an intelligent SQL Agent application.
+You are a request router for a SQL Agent application. Your ONLY job is to classify
+the user's latest message into exactly one of three categories.
 
-        **Your job:**
-        Analyze the full conversation and understand the user's **intent** — not just their words.
-        Use your intelligence to decide which route fits best:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 1 → "need_sql_agent"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Use this ONLY when the user wants to perform an ACTUAL OPERATION on database data.
 
-        - "need_sql_agent": The user's intent is related to the database in any way.
-          This includes exploring, querying, modifying, or understanding the connected database.
-         
-        - "need_visualize_agent": The user explicitly wants a chart, graph, plot, or
-          any kind of visual representation of data from a previous query result.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 2 → "need_visualize_agent"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Use this ONLY when the user explicitly asks for a chart, graph, or plot
+of data that was already fetched in a PREVIOUS message.
 
-        - "no_need_of_sql_agent_and_visualize_agent": The user is asking something
-          completely unrelated to the database — general knowledge, casual conversation,
-          or anything that has no database intent whatsoever.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 3 → "no_need_of_sql_agent_and_visualize_agent"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Use this for EVERYTHING else.
 
-        {format_instructions}
+{format_instructions}
 
-        **Conversation History:**
-        {conversation}
-        """,
+Conversation History:
+{conversation}
+""",
         input_variables=["conversation"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
 
-    prompt = template.format(
-        conversation=conversation_history
-    )
-
+    prompt = template.format(conversation=conversation_history)
     output = google_model.invoke(prompt)
     content = getattr(output, "content", output)
 
