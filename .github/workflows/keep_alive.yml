@@ -1,0 +1,21 @@
+name: Keep Render App Alive
+
+on:
+  schedule:
+    - cron: '*/12 * * * *'  # Every 10 minutes
+  workflow_dispatch:         # Manual trigger from GitHub UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping SQL Agent Health Endpoint
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://agentic-ai-workflow-sql-agent.onrender.com/health)
+          echo "Response status: $STATUS"
+          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 400 ]; then
+            echo "App is alive!"
+          else
+            echo "Warning: App returned status $STATUS"
+          fi
