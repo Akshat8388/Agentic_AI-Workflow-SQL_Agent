@@ -96,7 +96,7 @@ the user's latest message into exactly one of three categories.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CATEGORY 1 → "need_sql_agent"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Use this ONLY when the user wants to perform an ACTUAL OPERATION on database data.
+Use when the user wants ANY information FROM the database OR wants to modify/describe/explore the database structure or its data.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CATEGORY 2 → "need_visualize_agent"
