@@ -143,6 +143,8 @@ You MUST use the web_search tool for ANY question about:
 - Current date, time
 - Recent news, current events
 - Anything that requires up-to-date information.
+
+**Your answer should be concise and aware of your place in the application.**
 """
     
     agent = create_react_agent(model=google_model, tools=[search_tool], prompt=system_prompt)
