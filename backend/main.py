@@ -345,6 +345,6 @@ async def resume_agent(request: QueryRequest,user = Depends(get_current_user)):
 def serve_root():
     return FileResponse(os.path.join(BASE_DIR, "../frontend/index.html"))
 
-@app.get("/health")
-def health():
+@app.api_route("/health", methods=["GET", "HEAD"])
+async def health():
     return {"status": "ok"}
